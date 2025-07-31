@@ -1,0 +1,181 @@
+body {
+    background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+    font-family: 'Fira Code', monospace;
+    color: #EEEEEE;
+    margin: 0;
+    padding: 90px 20px;
+}
+
+/* Container */
+.api-tester {
+    background: linear-gradient(145deg, rgba(28, 28, 28, 0.7), rgba(49, 54, 63, 0.6));
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(118, 171, 174, 0.25);
+    padding: 25px;
+    max-width: 800px;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+
+    /* 🔥 Fade-in animation */
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+}
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
+
+
+/* Shiny effect (subtle light) */
+.api-tester::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(120deg, transparent, rgba(118, 171, 174, 0.1), transparent);
+    animation: shimmer 4s infinite linear;
+    z-index: 0;
+}
+
+/* Heading */
+.api-tester h2 {
+    font-family: 'Lemon Milk', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #76ABAE;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* Controls Section */
+.api-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 25px;
+    position: relative;
+    z-index: 2;
+}
+
+.api-controls input,
+.api-controls select,
+.api-controls textarea {
+    background: rgba(20, 20, 20, 0.85);
+    color: #EEEEEE;
+    border: 1px solid rgba(118, 171, 174, 0.35);
+    border-radius: 12px;
+    padding: 12px;
+    font-size: 1rem;
+    resize: vertical;
+    transition: all 0.3s ease;
+}
+
+.api-controls input:focus,
+.api-controls select:focus,
+.api-controls textarea:focus {
+    border-color: #76ABAE;
+    box-shadow: 0 0 10px #76abae55;
+    outline: none;
+}
+
+.api-controls textarea {
+    min-height: 100px;
+}
+
+/* Button */
+#sendRequest {
+    background: linear-gradient(145deg, #76ABAE, #5ea1a3);
+    color: #0d0d0d;
+    border: none;
+    padding: 14px 24px;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+#sendRequest:hover {
+    background: linear-gradient(145deg, #5ea1a3, #76ABAE);
+    box-shadow: 0 0 12px #76ABAE55;
+}
+
+/* Response Section */
+.response-section {
+    background: rgba(28, 28, 28, 0.95);
+    border: 1px solid rgba(118, 171, 174, 0.2);
+    border-radius: 14px;
+    padding: 18px;
+    position: relative;
+    z-index: 2;
+}
+
+.response-section h3 {
+    margin-bottom: 12px;
+    color: #76ABAE;
+    font-size: 1.3rem;
+    font-family: 'Lemon Milk', sans-serif;
+}
+
+/* Output box */
+#responseOutput {
+    background: #111317;
+    color: #f8f8f2;
+    padding: 16px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    white-space: pre-wrap;
+    word-break: break-word;
+    max-height: 350px;
+    overflow-y: auto;
+    border: 1px solid #444;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.6);
+}
+
+/* Animations */
+@keyframes shimmer {
+    0% {
+        transform: rotate(0deg) translateX(-100%);
+    }
+    100% {
+        transform: rotate(0deg) translateX(100%);
+    }
+}
+
+
+/* Custom Scrollbar - Chrome, Edge, Safari */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(145deg, #76ABAE, #4b7779);
+    border-radius: 10px;
+    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.6);
+    transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(145deg, #5ea1a3, #76ABAE);
+    box-shadow: 0 0 8px #76ABAE88;
+}

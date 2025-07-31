@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="api-tester">
+        <h2>📡 API Tester (Mini Postman)</h2>
+        <div class="api-controls">
+            <input type="text" id="api-url" placeholder="Enter API URL">
+            <select id="method">
+                <option>GET</option>
+                <option>POST</option>
+                <option>PUT</option>
+                <option>DELETE</option>
+            </select>
+            <textarea id="headers" placeholder='Headers (JSON format)'></textarea>
+            <textarea id="body" placeholder='Request Body (JSON for POST/PUT)'></textarea>
+            <button id="sendRequest">Send Request</button>
+        </div>
+        <div class="response-section">
+            <h3>📥 Response</h3>
+            <pre id="responseOutput">{...}</pre>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
